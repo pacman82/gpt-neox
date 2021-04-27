@@ -291,6 +291,7 @@ def prepare_dataset(dataset_name: str, tokenizer_type: str = None, data_dir: str
         # pass on building dataset (for unit tests)
         pass
     else:
+        num_workers = num_workers if dataset_name != "enwik8" else 1
         d = DownloaderClass(tokenizer_type=tokenizer_type, vocab_file=vocab_file, merge_file=merge_file,
                             data_dir=data_dir, num_workers=num_workers)
         d.prepare()
