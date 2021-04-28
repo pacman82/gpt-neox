@@ -2,9 +2,9 @@ import torch
 
 # default to FusedLayerNorm
 try:
-    from apex.normalization.fused_layer_norm import FusedLayerNorm as LayerNorm
+    # from apex.normalization.fused_layer_norm import FusedLayerNorm as LayerNorm
 
-    # Try to use FusedLayerNorm from Apex - this will trigger an error.
+    # Try to use FusedLayerNorm # from apex - this will trigger an error.
     _ = LayerNorm(8, eps=1e-5)
 
 except Exception as e:
